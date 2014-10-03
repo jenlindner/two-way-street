@@ -12,12 +12,14 @@ def engage():
 
     response = requests.get(data_url)
     data = StringIO.StringIO(response.text)
-    data_dict = []
-
+    context = {
+      'data_dict': [],
+    }
+    
     for row in csv.DictReader(data):
-      data_dict.append(row)
+      context['data_dict'].append(row)
 
-    return render_template('engage.html', data=data_dict)
+    return render_template('engage.html', **context)
 
 
 if __name__ == '__main__':

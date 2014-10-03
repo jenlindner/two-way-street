@@ -3,11 +3,21 @@
 <title>hai gurl</title>
 </head>
 <body>
-hai gurl
 
-{% for row in data %}
-  {{ row }}
+<table>
+{% for row in data_dict %}
+  <tr>
+    {% for key in row.keys() %}
+    <td>{{ key }}</td>
+    {% endfor %}
+  </tr>
+  <tr>
+    {% for key in row.keys() %}  
+      <td> {{ row[key] }} </td>    
+    {% endfor %}
+  </tr>
 {% endfor %}
+</table>
 
 </body>
 </html>
