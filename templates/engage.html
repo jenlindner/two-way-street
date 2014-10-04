@@ -6,11 +6,13 @@
 
 <table>
 {% for row in data_dict %}
+  {% if loop.index == 1 %}
   <tr>
     {% for key in row.keys() %}
     <td>{{ key }}</td>
     {% endfor %}
   </tr>
+  {% endif %}
   <tr>
     {% for key in row.keys() %}  
       <td> {{ row[key] }} </td>    
